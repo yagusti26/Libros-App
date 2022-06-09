@@ -1,16 +1,14 @@
-import NavBar from "./components/NavBars/NavBars";
-import React from "react";
+import NavBars from "./components/NavBars/NavBars";
+import { ItemListContainer } from "./components/ItemListContainer";
 
 function App() {
-
   return (
     <div className="App">
-      <header className="App-header">
-        <NavBar/>
-        <p style={ { marginTop: '200px' } }>¡Bienvenidos!</p>
+      <header className="App-headrer">
+        <NavBars></NavBars>
       </header>
+      <ItemListContainer greeting="¡Bienvenidos!"/>
     </div>
-  );
+  )
 }
-
 export default App;
