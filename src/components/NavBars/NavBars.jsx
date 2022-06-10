@@ -6,11 +6,11 @@ import './navbar.css'
 
 export default function NavBars() {
   return (
-    <nav className='{styles.navMain}'>
+    <nav className='navMain'>
       <ul className='navList' >
-        <a href="/">Link 1</a>
-        <a href="/">Link 2</a>
-        <a href="/">Link 23</a>
+        <a href="/">Productos</a>
+        <a href="/">Servicios</a>
+        <a href="/">Contacto</a>
         <CartWidget />
       </ul>
 
