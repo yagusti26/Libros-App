@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Después",
+        "author": "Stephen King",
+        "price": 200,
+        "stock": 4,
+
+        "img": "https://res.cloudinary.com/dvowu5hzu/image/upload/v1655325471/img%20books/Later_005__uyrl5g.jpg",
+        "category": "ficción",
+        "description": "Jamie Conklin; el único hijo de una madre soltera; solo quiere tener una infancia normal. Sin embargo; nació con una habilidad sobrenatural que su madre le insta a mantener en secreto y que le permite ver aquello que nadie puede y enterarse de lo que el resto del mundo ignora"
+    },
+    {
+        "name": "Los Compas vs Hackers",
+        "author": "Mikecrack",
+        "price": 222,
+        "stock": 10,
+
+        "img": "https://res.cloudinary.com/dvowu5hzu/image/upload/v1655326172/img%20books/695132_defr1i.jpg",
+        "category": "ficción",
+        "description": "Los Compas disfrutan de un vuelo tranquilo a Tropicubo cuando de repente una tormenta los obliga a hacer un aterrizaje forzoso.¡Se han salvado de milagro! Pero algo raro sucede¿ Están en la misteriosa base secreta de unos malvados hackers¿ El Área Puerro 51."
+    }
+]
