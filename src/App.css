@@ -3,7 +3,9 @@
     margin: 0px;
     box-sizing: border-box;
 } 
-
+body {
+    background-color: rgb(181, 172, 173);
+}
 .count {
     background-color: rgb(155, 139, 163);
     max-width: 10%;
