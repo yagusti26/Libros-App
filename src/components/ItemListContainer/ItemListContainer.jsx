@@ -6,7 +6,9 @@ import ItemList from '../ItemList/ItemList';
 export const ItemListContainer = (props) => {
   const [products, setProducts] = useState([]);
 
+
   useEffect(() => {
+   
     const llamarProductos = new Promise((res, rej) => {
       setTimeout(() => {
         res(productos);
@@ -22,6 +24,7 @@ export const ItemListContainer = (props) => {
       console.log(error)
     })
   }, []);
+
 
   return (
     <>

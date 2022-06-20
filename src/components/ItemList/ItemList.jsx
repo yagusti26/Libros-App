@@ -1,11 +1,11 @@
 import React from 'react';
 import Item from '../Item/Item';
 
-const ItemList = ({ items }) => {
+const ItemList = ( { items } ) => {
     return (
-        <div>
-            {items.map((item) => (
-                <Item key={item.id} item={item} />
+        <div className='flex justify-around flex-wrap'>
+            {items?.map((item) => (
+                <Item key={items.id} item={items} />
             ))}
         </div>
     );
