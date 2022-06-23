@@ -2,23 +2,24 @@ import React from 'react';
 import CartWidget from './CartWidget';
 import s from './Navbar.module.css';
 import { Link } from 'react-router-dom';
+import DiamondOutlinedIcon from '@mui/icons-material/DiamondOutlined';
 
 const Navbar = () => {
     return (
         <nav className={s.navbar}>
             <Link to="/">
-                <img src="img/logo192.png" alt="logo" />
+                <DiamondOutlinedIcon style={{color: 'white'}}/>
             </Link>
             <div className={s.links}>
                 <ul>
                     <Link to="/category/remeras">
-                        <li>Remeras</li>
+                        <li>Ficción</li>
                     </Link>
                     <Link to="/category/camisas">
-                        <li>Camisas</li>
+                        <li>No ficción</li>
                     </Link>
                     <Link to="/category/gorras">
-                        <li>Gorras</li>
+                        <li>Anime</li>
                     </Link>
                 </ul>
                 <hr />

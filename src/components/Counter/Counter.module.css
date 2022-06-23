@@ -21,7 +21,7 @@
     cursor: pointer;
     min-width: 20%;
     font-weight: bold;
-    background-color: #309fc4;
+    background-color: #8a4af3;
     color: white;
 }
 
@@ -43,6 +43,6 @@
     border: none;
     border-radius: 8px;
     color: white;
-    background-color: #30b0c4;
+    background-color: #8a4af3;
     cursor: pointer;
 }
