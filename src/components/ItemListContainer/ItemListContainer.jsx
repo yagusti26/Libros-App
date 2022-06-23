@@ -1,35 +1,27 @@
-import React, { useState, useEffect } from 'react'
-import { productos } from '../../mock/products';
-import ItemList from '../ItemList/ItemList';
+import React, { useEffect, useState } from 'react';
+import { traerProductos } from '../../data/products';
+import ItemList from './ItemList';
+import s from './ItemListContainer.module.css';
+import { useParams } from 'react-router-dom';
 
+const ItemListContainer = () => {
+    const [products, setProducts] = useState([]);
 
-export const ItemListContainer = (props) => {
-  const [products, setProducts] = useState([]);
+    const { categoryId } = useParams();
 
+    useEffect(() => {
+        traerProductos(categoryId)
+            .then((res) => {
+                setProducts(res);
+            })
+            .catch((error) => console.log(error));
+    }, [categoryId]);
 
-  useEffect(() => {
-   
-    const llamarProductos = new Promise((res, rej) => {
-      setTimeout(() => {
-        res(productos);
-      }, 2000);
+    return (
+        <div className={s.containerCards}>
+            <ItemList products={products} />
+        </div>
+    );
+};
 
-    });
-
-    llamarProductos
-    .then((res) => {
-      setProducts(res);
-    })
-    .catch((error)=>{
-      console.log(error)
-    })
-  }, []);
-
-
-  return (
-    <>
-      <div className='itemListCount'>{props.greeting}</div>     
-      <ItemList articulos={products} />
-    </>  
-  )
-}
+export default ItemListContainer;

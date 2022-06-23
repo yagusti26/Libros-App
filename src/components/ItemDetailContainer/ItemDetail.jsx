@@ -1,17 +1,20 @@
-import React from 'react'
-import ItemCount from '../ItemListContainer/ItemCount/ItemCount';
+import React from 'react';
+import Counter from '../Counter/Counter';
+import s from './Detail.module.css';
 
+const ItemDetail = ({ product }) => {
+    return (
+        <div className={s.containerDetail}>
+            <div className={s.containerDetailImg}>
+                <img src={product.img} alt={product.name} />
+            </div>
+            <div className={s.containerDetailInfo}>
+                <h3>{product.name}</h3>
+                <h4>$ {product.price}</h4>
+                <Counter />
+            </div>
+        </div>
+    );
+};
 
-function ItemDetail({ item }) {
-  return (
-    <div>
-        <h1>{item.name}</h1>
-        <p>{item.description}</p>
-        <p>$ {item.price}</p>
-
-        <ItemCount stock={8} initial={1}  />
-    </div>
-  );
-}
-
-export default ItemDetail
+export default ItemDetail;

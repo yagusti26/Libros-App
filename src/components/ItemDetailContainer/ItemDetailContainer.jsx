@@ -1,38 +1,23 @@
-import React from 'react';
-import { productos } from '../../mock/products';
+import React, { useEffect, useState } from 'react';
+import { traerProducto } from '../../data/products';
 import ItemDetail from './ItemDetail';
-import { useEffect, useState } from "react";
 
-
-const ItemDetailContainer = (props, itemId) => {
+const ItemDetailContainer = () => {
     const [product, setProduct] = useState({});
-  
-  
+
     useEffect(() => {
-     
-      const llamarProducto = new Promise((res, rejected) => {
-        setTimeout(() => {
-          res(productos [itemId]);
-        }, 2000);
-  
-      });
-  
-      llamarProducto
-      .then((res) => {
-        setProduct(res);
-      })
-      .catch((error)=>{
-        console.log(error)
-      })
+        traerProducto()
+            .then((res) => {
+                setProduct(res);
+            })
+            .catch((error) => console.log(error));
     }, []);
-  
-  
+
     return (
-      <>
-        <div className='itemListCount'>{props.greeting}</div>     
-        <ItemDetail item={product} />
-      </>  
-    )
-  }
+        <div>
+            <ItemDetail product={product} />
+        </div>
+    );
+};
 
 export default ItemDetailContainer;

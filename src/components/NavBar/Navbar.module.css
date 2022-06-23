@@ -1,0 +1,44 @@
+.navbar {
+    background-color: #05424bee;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar img {
+    width: 70px;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.links ul {
+    display: flex;
+    list-style: none;
+    margin-right: 20px;
+}
+
+.links ul li {
+    margin: 0px 10px;
+    color: rgb(241, 220, 220);
+}
+
+.shop {
+    display: flex;
+    align-items: center;
+}
+
+hr {
+    margin-right: 10px;
+    width: 2px;
+    height: 40px;
+}
+
+.shop p {
+    color: white;
+    margin-left: 5px;
+}
