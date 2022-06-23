@@ -12,14 +12,14 @@ const Navbar = () => {
             </Link>
             <div className={s.links}>
                 <ul>
-                    <Link to="/category/remeras">
+                    <Link to="/category/ficción">
                         <li>Ficción</li>
                     </Link>
-                    <Link to="/category/camisas">
-                        <li>No ficción</li>
+                    <Link to="/category/infantil">
+                        <li>Infantil</li>
                     </Link>
-                    <Link to="/category/gorras">
-                        <li>Anime</li>
+                    <Link to="/category/biografía">
+                        <li>Biografía</li>
                     </Link>
                 </ul>
                 <hr />
