@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import s from './Counter.module.css';
 
-const Counter = () => {
-    const [numero, setNumero] = useState(0);
+const Counter = ({ initial, stock, onAdd }) => {
+    const [count, setCount] = useState(1);
     // eslint-disable-next-line
     const [bool, setBool] = useState(false);
     const [btn, setBtn] = useState('Add to Cart');
 
     const suma = () => {
-        setNumero(numero + 1);
+        count !== stock && setCount(count + 1);
     };
     const resta = () => {
-        setNumero(numero - 1);
+        count !== initial && setCount(count - 1);
+        
+        
     };
 
     const handleButton = () => {
@@ -36,7 +38,7 @@ const Counter = () => {
                 <button disabled={bool} onClick={resta}>
                     -
                 </button>
-                <p>{numero}</p>
+                <p>{count}</p>
                 <button disabled={bool} onClick={suma}>
                     +
                 </button>

@@ -7,7 +7,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 const Navbar = () => {
 
-    const style = "text-[16px] cursor-pointer ml-[50px]"
+    const style = "text-[16px] text-[white] cursor-pointer ml-[50px]"
     return (
         <nav className='navbar h-[60px] shadow-md relative z-10 bg-[#8a4af4]'>
             <div className='wrapper pl-[20px] pr-[20px] pt-[10px] pb[10px] flex justify-between items-center'>

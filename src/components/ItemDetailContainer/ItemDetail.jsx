@@ -11,7 +11,7 @@ const ItemDetail = ({ product }) => {
             <div className={s.containerDetailInfo}>
                 <h3>{product.name}</h3>
                 <h4>$ {product.price}</h4>
-                <Counter />
+                <Counter stock={10} initial={1}/>
             </div>
         </div>
     );
