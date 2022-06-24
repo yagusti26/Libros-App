@@ -10,6 +10,9 @@ const Counter = () => {
     const suma = () => {
         setNumero(numero + 1);
     };
+    const resta = () => {
+        setNumero(numero - 1);
+    };
 
     const handleButton = () => {
         setBtn('Otra cosa');
@@ -30,7 +33,9 @@ const Counter = () => {
     return (
         <section className={s.containerCounter}>
             <div className={s.containerButtons}>
-                <button>-</button>
+                <button disabled={bool} onClick={resta}>
+                    -
+                </button>
                 <p>{numero}</p>
                 <button disabled={bool} onClick={suma}>
                     +

@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
     }, []);
 
     return (
-        <div>
+        <div className='flex flex-wrap p-5 items-center justify-center'>
             <ItemDetail product={product} />
         </div>
     );
