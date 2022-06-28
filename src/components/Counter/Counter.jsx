@@ -45,6 +45,12 @@ const Counter = ({ initial, stock, onAdd }) => {
             </div>
             <div className={s.containerAdd}>
                 <button onClick={handleButton}>{btn}</button>
+                
+            </div>
+
+            <br/>
+            <div className={s.containerAdd}>
+                <button onClick={() => onAdd(count)}>Terminar compra</button>
             </div>
         </section>
     );
