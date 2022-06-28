@@ -18,7 +18,7 @@ export const CartProvider = ({ children }) => {
 
     const addToCart = (product, cantidad) => {
         if (isInCart(product.id)) {
-            console.log('ya esta en el carrito, sumale la cantidad nomá');
+            console.log('en carrito');
         } else {
             setCart([...cart, { ...product, cantidad }]);
         }
