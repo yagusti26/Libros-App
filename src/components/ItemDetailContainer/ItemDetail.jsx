@@ -1,17 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useContext } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
 import Counter from '../Counter/Counter';
 import s from './Detail.module.css';
+// import { useNavigate } from 'react-router-dom';
 
 
 const ItemDetail = ({ product }) => {
+    const {addToCart} = useContext(CartContext)
+
+    //let navigate = useNavigate();  para usar mas
 
     const [cant, setCant] = useState(0);
 
     const onAdd = (cantidad) => {
         setCant(cantidad);
+        addToCart(product, cantidad);
+        //navigate('/cart');
         
     };
+
     return (
         <div className={s.containerDetail}>
             <div className={s.containerDetailImg}>
