@@ -86,41 +86,11 @@ const products = [
         discount: 5,
     },
 ];
+ 
 
-const product = {
-    name: 'Harry Potter y la piedra filosofal',
-    author: 'J.K. Rowling',
-    price: 88,
-    stock: 5,
-    id: 44,
-    img: 'https://res.cloudinary.com/dvowu5hzu/image/upload/v1655326769/img%20books/677655_lpattg.jpg',
-    category: 'ficción',
-    idioma: 'español',
-    isbn10: 9789878000404,
-    description:
-            'Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y del insoportable primo Dudley. Se siente muy triste y solo; hasta que un buen día recibe una carta que cambiará su vida para siempre. En ella le comunican que ha sido aceptado como alumno en el colegio interno Hogwarts de magia y hechicería. A partir de ese momento; la suerte de Harry da un vuelco espectacular.',
-    discount: 5,
-};
+export const traerProductos = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(products);
+    }, 2000);
+});
 
-export const traerProductos = (cat) => {
-    return new Promise((resolve, reject) => {
-        const productosFiltrados = products.filter(
-            (prod) => prod.category === cat
-        );
-        setTimeout(() => {
-            if (cat === undefined) {
-                resolve(products);
-            } else {
-                resolve(productosFiltrados);
-            }
-        }, 1000);
-    });
-};
-
-export const traerProducto = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(product);
-        }, 1000);
-    });
-};

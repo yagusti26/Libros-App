@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { traerProductos } from '../../data/products';
 import ItemList from './ItemList';
 import s from './ItemListContainer.module.css';
-import { useParams } from 'react-router-dom';
+import { getItems } from '../../services/firestore';
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
 
-    const { categoryId } = useParams();
-
     useEffect(() => {
-        traerProductos(categoryId)
+        getItems()
             .then((res) => {
                 setProducts(res);
             })
             .catch((error) => console.log(error));
-    }, [categoryId]);
+    }, []);
 
     return (
         <div className={s.containerCards}>

@@ -12,29 +12,60 @@ export const CartProvider = ({ children }) => {
         console.log(cart);
     }, [cart]);
 
-    const prueba = () => {
-        console.log('Desde el contexto');
-    };
+
 
     const addToCart = (product, cantidad) => {
         if (isInCart(product.id)) {
-            console.log('en carrito');
+            sumarCantidad(product, cantidad);
         } else {
             setCart([...cart, { ...product, cantidad }]);
         }
         
     };
 
-    const isInCart = (id) => {
-        return cart.some((prod) => prod.id === id);
+    const isInCart = (id) => cart.some((prod) => prod.id === id);
+    
+
+    const sumarCantidad = (product, cantidad) => {
+        const newProducts = cart.map((prod) => {
+            if (prod.id === product.id) {
+                const newProduct = {
+                    ...prod,
+                    cantidad: prod.cantidad + cantidad,
+                };
+                return newProduct;
+            } else {
+                return prod;
+            }
+        });
+        setCart(newProducts);
     };
 
-    const clearCart = () => {
-        setCart([]);
+    const totalPrice = () => {
+        let total = 0;
+        cart.forEach((product) => (total = total + (product.sumarCantidad * product.price)));
+        return total;
     };
+
+    const totalUnidades = () => {
+        return 5;
+    };
+
+    const deleteItem = (id) => {
+        setCart(cart.filter((prod) => prod.id !== id));
+    };
+
+    const deleteAll = (_) => setCart([]);
 
     return (
-        <CartContext.Provider value={{ cart, prueba, addToCart, clearCart }}>
+        <CartContext.Provider value={{ 
+            addToCart,
+            cart,
+            deleteItem,
+            totalPrice,
+            deleteAll,
+            totalUnidades,
+            }}>
             {children}
         </CartContext.Provider>
     );
