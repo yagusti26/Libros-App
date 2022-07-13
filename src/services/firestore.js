@@ -47,8 +47,8 @@ export async function getProdCategory(idcategory) {
 }
 
 /* producto individual */
-export async function getOneItem(productId){
-    const docref = doc(appFirestore, "books", productId);
+export async function getOneItem(id){
+    const docref = doc(appFirestore, "books", id);
 
     const docSnapshot = await getDoc(docref);
 

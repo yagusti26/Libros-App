@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
-import { getOneItem } from '../../services/firestore'
+import { getOneItem } from '../../services/firestore';
 import Error from '../Error';
 import CircleLoader from 'react-spinners/CircleLoader'
 
@@ -10,10 +10,10 @@ const ItemDetailContainer = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false)
     
-    const { productId } = useParams();
+    const { id } = useParams();
 
     useEffect(() => {
-        getOneItem(productId)
+        getOneItem(id)
             .then((res) => {
                 setProduct(res);
             })
@@ -24,7 +24,7 @@ const ItemDetailContainer = () => {
             .finally(() => {
                 setIsLoading(false);
             });
-    }, [productId]);
+    }, [id]);
 
 
     if(isLoading){

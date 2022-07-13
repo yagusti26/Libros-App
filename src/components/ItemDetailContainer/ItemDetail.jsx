@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import CartContext from '../../context/CartContext';
+import cartContext from '../../context/CartContext';
 import Error from '../Error';
 import Counter from '../Counter/Counter';
 import s from './Detail.module.css';
@@ -8,7 +8,7 @@ import s from './Detail.module.css';
 
 
 const ItemDetail = ({ product }) => {
-    const { addToCart, cart, deleteItem, isOnCart } = useContext(CartContext);
+    const { addToCart, cart, deleteItem, isOnCart } = useContext(cartContext);
     
     console.log(cart);
 
