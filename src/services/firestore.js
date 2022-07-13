@@ -1,7 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { async } from "@firebase/util";
 import { initializeApp } from "firebase/app";
-import { getFirestore, getDocs, getDoc, doc, collection } from "firebase/firestore"
+import { getFirestore, getDocs, getDoc, doc, query, where, collection } from "firebase/firestore"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -32,12 +31,31 @@ export async function getItems(){
     return respuesta;
 }
 
-export async function traerUnProducto(itemId){
-    const docref = doc(appFirestore, "books", itemId);
+/* traer los productos de una categoria */
+export async function getProdCategory(idcategory) {
+    const bookCollection = collection(appFirestore, "books");
+    const q = query(bookCollection, where("category", "==", idcategory));
+    const booksSnapshot = await getDocs(q);
+
+    let respuesta = booksSnapshot.docs.map( doc => {
+        return {
+            ...doc.data(),
+            id: doc.id
+        }
+    })
+    return respuesta 
+}
+
+/* producto individual */
+export async function getOneItem(productId){
+    const docref = doc(appFirestore, "books", productId);
 
     const docSnapshot = await getDoc(docref);
 
-    return { id: docSnapshot.id, ...docSnapshot.data() };
+    return { 
+        id: docSnapshot.id,
+        ...docSnapshot.data(),
+    };
 }
 
 

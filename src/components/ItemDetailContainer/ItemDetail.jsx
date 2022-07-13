@@ -1,26 +1,22 @@
-import React from 'react';
 import { useContext } from 'react';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../../context/CartContext';
+import CartContext from '../../context/CartContext';
+import Error from '../Error';
 import Counter from '../Counter/Counter';
 import s from './Detail.module.css';
 // import { useNavigate } from 'react-router-dom';
 
 
 const ItemDetail = ({ product }) => {
-    const {addToCart} = useContext(CartContext)
+    const { addToCart, cart, deleteItem, isOnCart } = useContext(CartContext);
+    
+    console.log(cart);
 
     //let navigate = useNavigate();  para usar mas
 
-    const [cant, setCant] = useState(0);
-
-    const onAdd = (cantidad) => {
-        setCant(cantidad);
+    function handleAddtoCart(cantidad) {
         addToCart(product, cantidad);
-        //navigate('/cart');
-        
-    };
+    }
 
     return (
         <div className={s.containerDetail}>
@@ -29,13 +25,32 @@ const ItemDetail = ({ product }) => {
             </div>
             <div className={s.containerDetailInfo}>
                 <h3>{product.name}</h3>
+                <h4>{product.author}</h4>
                 <h4>$ {product.price}</h4>
                 <p>{product.description}</p>
-                {cant === 0 ? (
-                    <Counter onAdd={onAdd} stock={10} initial={1}/>
+
+                {/* rendering conditional  */}
+                {product.stock <= 0 && <Error isWarning={true} text="Lo sentimos, no hay stock" />}
+                
+                {isOnCart(product.id) ? (
+                    <Link className='bg-green-500 py-2 px-8 rounded-md font-bold text-white'
+                    to="/cart">
+                        Ir al carrito
+                    </Link>
+
                 ) : (
-                    <Link  to="/cart">Ir al carrito</Link>
+                    <Counter stock={product.stock} initial={1} onAdd={handleAddtoCart} />
+
                 )}
+                
+                {isOnCart(product.id) && (
+                    <button onClick={() => deleteItem(product.id)} className='mt-3 bg-red-500 py-2 px-8 rounded-md font-bold text-white'>
+                        Eliminar del carrito
+                    </button>
+                )}
+                
+                
+                
             </div>
         </div>
     );

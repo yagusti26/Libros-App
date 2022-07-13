@@ -1,11 +1,11 @@
 import React from 'react'
 import { useContext } from 'react';
-import { CartContext } from '../../context/CartContext';
+import cartContext from '../../context/CartContext'
 
 
 const CartView = () => {
     
-    const { cart, deleteItem, totalPrice, deleteAll } = useContext(CartContext);
+    const { cart, deleteItem, totalPrice, deleteAll } = useContext(cartContext);
 
     return (
         <>
@@ -23,12 +23,12 @@ const CartView = () => {
                                 />
                                 <h2>{product.name}</h2>
                                 <h2>${product.price}</h2>
-                                <h2>Cantidad: {product.cantidad}</h2>
+                                <h2>Cantidad: {product.qnty}</h2>
                                 <button onClick={() => deleteItem(product.id)}>
                                     Eliminar
                                 </button>
                                 <p>Subtotal: <span className='text-green-600'>$
-                                    { product.price * product.sumarCantidad}
+                                    { product.price * product.qntyInCart}
                                     </span></p>
                             </div>
                         ))}
