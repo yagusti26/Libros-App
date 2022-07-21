@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getOneItem } from '../../services/firestore';
 import Error from '../Error';
 import CircleLoader from 'react-spinners/CircleLoader'
+import { exportDataToFirestore } from '../../services/firestore';
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState({});
@@ -44,6 +45,7 @@ const ItemDetailContainer = () => {
                 {isError && <Error text={isError} />}
                 {product.id && <ItemDetail item={product} />}
             </div>
+            <button onClick={exportDataToFirestore}>Prueba guardar item</button>
         </div>
     </>
     );
