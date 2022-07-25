@@ -85,6 +85,48 @@ const products = [
             'Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y del insoportable primo Dudley. Se siente muy triste y solo; hasta que un buen día recibe una carta que cambiará su vida para siempre. En ella le comunican que ha sido aceptado como alumno en el colegio interno Hogwarts de magia y hechicería. A partir de ese momento; la suerte de Harry da un vuelco espectacular.',
         discount: 5,
     },
+    {
+        name: 'Violeta',
+        author: 'Isabel Allende',
+        price: 88,
+        stock: 3,
+        id: 47,
+        img: 'https://res.cloudinary.com/dvowu5hzu/image/upload/v1658781583/img%20books/9788401027475_wlogve.jpg',
+        category: 'ficción',
+        idioma: 'español',
+        isbn10: 9788401027475,
+        description:
+            'La épica y emocionante historia de una mujer cuya vida abarca los momentos históricos más relevantes del siglo XX.Desde 1920 -con la llamada «gripe española»- hasta la pandemia de 2020, la vida de Violeta será mucho más que la historia de un siglo.',
+        discount: 5,
+    },
+    {
+        name: 'Anna Kadabra 8. ',
+        author: 'Pedro Mañas',
+        price: 24,
+        stock: 6,
+        id: 74,
+        img: 'https://res.cloudinary.com/dvowu5hzu/image/upload/v1658781812/img%20books/9788408251354_sxnnc7.jpg',
+        category: 'infantil',
+        idioma: 'español',
+        isbn10: 9788408251354,
+        description:
+            '¿Conseguirán Anna y sus amigos la gran varita de oro? Anna y el resto de aprendices están emocionados. ¡Les toca ser los anfitriones del próximo festival de brujería! Pasarán juntos un fin de semana en la mansión encantada, conocerán a un montón de magos…y competirán con los demás clubes para intentar ganar el premio más importante: ¡la gran varita de oro!',
+        discount: 5,
+    },
+    {
+        name: 'Frida Kahlo. Una biografía',
+        author: 'Maria Hesse',
+        price: 90,
+        stock: 4,
+        id: 98,
+        img: 'https://res.cloudinary.com/dvowu5hzu/image/upload/v1658781992/img%20books/9788426403438_nlyqgd.jpg',
+        category: 'biografía',
+        idioma: 'español',
+        isbn10: 9788426403438,
+        description:
+            'Una preciosa biografía de la pintora mexicana Frida Kahlo ilustrada con las evocadoras imágenes de María Hesse, ganadora del Premio de la Fundación Nacional del Libro Infantil y Juvenil de Brasil. Inspirado en las vivencias de la icónica pintora mexicana, este libro ofrece un hermoso paseo ilustrado por su vida y su obra.',
+        discount: 5,
+    },
 ];
  
 
