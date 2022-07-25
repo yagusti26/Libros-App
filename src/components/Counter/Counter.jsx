@@ -1,59 +1,51 @@
-import React, { useEffect, useState } from 'react';
-import s from './Counter.module.css';
+import { useState } from 'react'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content';
 
-const Counter = ({ initial, stock, onAdd }) => {
-    const [count, setCount] = useState(1);
-    // eslint-disable-next-line
-    const [bool, setBool] = useState(false);
-    const [btn, setBtn] = useState('Add to Cart');
 
-    const suma = () => {
-        count !== stock && setCount(count + 1);
-    };
-    const resta = () => {
-        count !== initial && setCount(count - 1);
-        
-        
-    };
+function Counter({ stock, initial, onAdd }) {
 
-    const handleButton = () => {
-        setBtn('Otra cosa');
+  const MySwal = withReactContent(Swal)
+  const [count, setCount] = useState(initial)
 
-        /*setTimeout(() => {
-            setBtn('');
-        }, 2000); */
-    };
 
-    useEffect(() => {
-        console.log('me rendericé');
+  function suma() {
 
-        return () => {
-            //todo lo que sucede acá se ejecuta antes del primer renderizado
-        };
-    }, []);
+    (count < stock)
+      ? setCount(count + 1)
+      : MySwal.fire(
+        '¡Lo sentimos! ',
+        'Sin stock, por favor vuelve a consultar en unos días.',
+        'warning',
+      )
 
-    return (
-        <section className={s.containerCounter}>
-            <div className={s.containerButtons}>
-                <button disabled={bool} onClick={resta}>
-                    -
-                </button>
-                <p>{count}</p>
-                <button disabled={bool} onClick={suma}>
-                    +
-                </button>
-            </div>
-            <div className={s.containerAdd}>
-                <button onClick={handleButton}>{btn}</button>
-                
-            </div>
+  }
 
-            <br/>
-            <div className={s.containerAdd}>
-                <button onClick={() => onAdd(count)}>Terminar compra</button>
-            </div>
-        </section>
-    );
-};
+  function resta() {
 
-export default Counter;
+    (count > initial) && setCount(count - 1)
+
+  }
+
+
+
+
+  return (
+    <>
+      <div className="container mt-5">
+
+        <div className="flex justify-evenly items-center p-8 border-1 ">
+          <button className="text-2xl font-bold bg-violet-400 text-white py-1 px-2 rounded-md" onClick={resta}>-</button>
+          <span className="text-xl font-extrabold" >{count}</span>
+          <button className="text-2xl font-bold bg-violet-400 text-white py-1 px-2 rounded-md" onClick={suma}>+</button>
+        </div>
+
+        <div>
+          <button onClick={() => onAdd(count)} className='mt-3 bg-violet-500 py-2 px-8 rounded-md font-bold text-white' >Agregar al Carrito</button>
+        </div>
+
+      </div>
+    </>
+  )
+}
+export default Counter

@@ -37,9 +37,7 @@ export function CartProvider(props){
         return total;
     }
 
-    const totalUnidades = () => {
-        return 5;
-    };
+
 
     function deleteItem(id) {
         let newCart = (cart.filter((product) => product.id !== id));
@@ -60,7 +58,6 @@ export function CartProvider(props){
                 deleteItem,
                 totalPrice,
                 deleteAll,
-                totalUnidades,
             }}
         >
             {props.children}

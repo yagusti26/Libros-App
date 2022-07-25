@@ -41,7 +41,7 @@ const ItemDetailContainer = () => {
     return (
         <>
         <div className="text-center container mx-auto mt-5 h-screen">  
-            <div className='font-bold text-pink-600 text-4x1 mb-2'>
+            <div className=' text-black-600 text-4x1 mb-2'>
                 {isError && <Error text={isError} />}
                 {product.id && <ItemDetail item={product} />}
             </div>
