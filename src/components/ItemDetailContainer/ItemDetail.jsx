@@ -8,7 +8,7 @@ import s from './Detail.module.css';
 
 
 const ItemDetail = ({ item }) => {
-    const { addToCart, cart, deleteItem, isOnCart } = useContext(cartContext);
+    const { addToCart, deleteItem, isOnCart } = useContext(cartContext);
     
 
     function handleAddtoCart(cantidad) {
@@ -30,7 +30,7 @@ const ItemDetail = ({ item }) => {
                 {item.stock <= 0 && <Error isWarning={true} text="Lo sentimos, no hay stock" />}
                 
                 {isOnCart(item.id) ? (
-                    <Link className='bg-violet-600/75 py-2 px-8 mt-4 rounded-md font-bold text-white'
+                    <Link className='bg-[#c4a4f9] py-2 px-8 mt-4 rounded-md font-bold text-white'
                     to="/cart">
                         Ir al carrito
                     </Link>

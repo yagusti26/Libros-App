@@ -8,7 +8,6 @@ import {
     query, 
     where, 
     collection, 
-    setDoc, 
     Timestamp, 
     addDoc 
 } from "firebase/firestore"

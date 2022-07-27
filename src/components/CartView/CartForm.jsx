@@ -125,7 +125,7 @@ export const CartForm = () => {
 
             				<div class="flex justify-center  items-center flex-col">
 
-            					<img src="https://img.icons8.com/color/96/000000/mastercard-logo.png" width="40" class="relative right-5" />
+            					<img src="https://img.icons8.com/color/96/000000/mastercard-logo.png" width="40" class="relative right-5" alt='logoCard' />
             					<span class="text-xs font-medium text-gray-200 bottom-2 relative right-5">mastercard.</span>
             					
             				</div>
