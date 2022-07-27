@@ -41,7 +41,7 @@ const ItemDetail = ({ item }) => {
                 )}
                 
                 {isOnCart(item.id) && (
-                    <button onClick={() => deleteItem(item.id)} className='mt-3 bg-violet-600/75 py-2 px-8 rounded-md font-bold text-white'>
+                    <button onClick={() => deleteItem(item.id)} className='mt-3 bg-[#c4a4f9] py-2 px-8 rounded-md font-bold text-white'>
                         Eliminar del carrito
                     </button>
                 )}

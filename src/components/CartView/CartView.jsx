@@ -13,7 +13,7 @@ const CartView = () => {
     if (cart.length === 0) {
         return (
             <main className="h-screen">
-                <div className="bg-gray-100 h-screen">
+                <div className="bg-gray-200 h-screen">
                     <h1 className="text-center font-medium text-violet-800 text-4xl p-40">El carrito está vacio</h1>
                     <div className="flex justify-center p-7">
                     <Link to="/" className="bg-gray-600 py-4 px-10 text-1xl rounded-md font-bold text-white mt-5" >
@@ -32,7 +32,7 @@ const CartView = () => {
                             <div className="w-full p-4 px-5 py-5">
                                 <div className="md:grid md:grid-cols-3 gap-2 ">
                                     <div className="col-span-2 p-5">
-                                        <h1 className="text-xl font-medium ">Shopping Cart</h1>
+                                        <h1 className="text-xl font-medium ">Tu carrito</h1>
                                         {cart.map((product) => (
                                         <div class="flex justify-between items-center mt-6 pt-6">
                                             <div className='flex  items-center' key={product.id}>
@@ -50,7 +50,7 @@ const CartView = () => {
                                                 <div className='flex justify-center items-center'>
                                                     
                                                     <div className='pr-4 flex'>
-                                                        <button onClick={() => deleteItem(product.id)} className="bg-violet-500 py-2 px-8 rounded-md font-bold text-white mt-5">
+                                                        <button onClick={() => deleteItem(product.id)} className="bg-[#c4a4f9] py-2 px-8 rounded-md font-bold text-white mt-5">
                                                             Eliminar
                                                         </button>
                                                         

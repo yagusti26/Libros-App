@@ -127,6 +127,48 @@ const products = [
             'Una preciosa biografía de la pintora mexicana Frida Kahlo ilustrada con las evocadoras imágenes de María Hesse, ganadora del Premio de la Fundación Nacional del Libro Infantil y Juvenil de Brasil. Inspirado en las vivencias de la icónica pintora mexicana, este libro ofrece un hermoso paseo ilustrado por su vida y su obra.',
         discount: 5,
     },
+    {
+        name: 'Ser Elvis',
+        author: 'Ray Connolly',
+        price: 120,
+        stock: 5,
+        id: 93,
+        img: 'https://res.cloudinary.com/dvowu5hzu/image/upload/v1658844437/img%20books/9788413624525_krfxse.jpg',
+        category: 'biografía',
+        idioma: 'español',
+        isbn10: 9788413624525,
+        description:
+            'Elvis Presley es una figura de talla mundial de la cultura popular, un artista cuyo talento y fama sólo fueron igualados por sus excesos y su trágico final. Con su deslumbrante voz, este ícono del siglo XX incorporó influencias delrhythm and bluesy delfolkde raíces americanas para crear un tipo de música completamente nuevo y una nueva manera de expresarla sensibilidad masculina.',
+        discount: 5,
+    },
+    {
+        name: 'Déjame que te cuente',
+        author: 'La Literata',
+        price: 35,
+        stock: 7,
+        id: 53,
+        img: 'https://res.cloudinary.com/dvowu5hzu/image/upload/v1658844777/img%20books/9788418876172_clfdn8.jpg',
+        category: 'infantil',
+        idioma: 'español',
+        isbn10: 9788418876172,
+        description:
+            'Déjame que te cuente…por qué a la sardina Bartolina le encanta tomar el sol en la playa,cómo una princesa transformó su corazón de piedra,quiénes alumbraron a don Máximo para que construyera su belén navideño en las altísimas montañas,dónde pasa sus días el abuelo caballo,cuándo recuperó su sonrisa.',
+        discount: 5,
+    },
+    {
+        name: 'Don Quijote de la mancha',
+        author: 'Miguel de Cervantes',
+        price: 52,
+        stock: 4,
+        id: 59,
+        img: 'https://res.cloudinary.com/dvowu5hzu/image/upload/v1658844777/img%20books/9788418876172_clfdn8.jpg',
+        category: 'ficción',
+        idioma: 'español',
+        isbn10: 9788420412146,
+        description:
+            'Esta edición reproduce el texto crítico y las notas de Francisco Rico, a su vez coordinador del volumen, y se completa con estudios de escritores y filólogos de la talla de Mario Vargas Llosa, Francisco Ayala, Martín de Riquer, José Manuel Blecua, Guillermo Rojo, José Antonio Pascual, Margit Frenk y Claudio Guillén.',
+        discount: 5,
+    },
 ];
  
 

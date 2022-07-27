@@ -12,7 +12,7 @@ const Item = ({ product }) => {
                 <div>
                     <img src={product.img} alt="" className='w-[100%]'/>
                 </div>
-                <div className='flex relative w-[100%] h-[100%] left-0 top-0 items-center justify-center flex-col bg-[#5b21b6]'>
+                <div className='flex relative w-[100%] h-[100%] left-0 top-0 items-center justify-center flex-col bg-[#c4a4f9]'>
                     <h3 className='text-white font-medium text-[17.5px]'>{product.name}</h3>
                     <h4 className='text-white font-medium text-[16px]'>{product.author}</h4>
                     <h4 className='text-white font-medium text-[20px]'>$ {product.price}</h4>
