@@ -12,7 +12,7 @@ import {
     addDoc 
 } from "firebase/firestore"
 
-// Your web app's Firebase configuration
+
 const firebaseConfig = {
   apiKey: "AIzaSyALSmx80LMdc-tT6-ciUl9Z5reEKDktEF8",
   authDomain: "librosapp-99f2f.firebaseapp.com",
@@ -22,7 +22,7 @@ const firebaseConfig = {
   appId: "1:420771844074:web:0ee230f2ef8cbeddaeec93"
 };
 
-// Initialize Firebase
+
 const appFirebase = initializeApp(firebaseConfig);
 const appFirestore = getFirestore(appFirebase);
 
@@ -41,7 +41,7 @@ export async function getItems(){
     return respuesta;
 }
 
-/* traer los productos de una categoria */
+
 export async function getProdCategory(idcategory) {
     const bookCollection = collection(appFirestore, "books");
     const q = query(bookCollection, where("category", "==", idcategory));
@@ -56,7 +56,7 @@ export async function getProdCategory(idcategory) {
     return respuesta 
 }
 
-/* producto individual */
+
 export async function getOneItem(productId){
     const docref = doc(appFirestore, "books", productId);
 

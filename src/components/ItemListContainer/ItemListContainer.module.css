@@ -29,23 +29,6 @@
     width: 250px;
 }
 
-.cardInfo {
-    background-color: #8a4af3;
-    padding: 10px;
-}
 
-.cardInfo h3 {
-    color: white;
-    margin-bottom: 7px;
-}
 
-.cardInfo h4 {
-    color: white;
-    margin-bottom: 12px;
-}
 
-.details {
-    border: none;
-    padding: 5px 4px;
-    cursor: pointer;
-}
