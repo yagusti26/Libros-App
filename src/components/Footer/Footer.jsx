@@ -1,5 +1,4 @@
 import React from 'react'
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
